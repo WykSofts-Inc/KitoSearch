@@ -93,6 +93,12 @@ KitoAppliedFilterPills(filters.appliedFilters(for: state),
 `KitoFilterState` is a plain value: send it to your backend in `KitoSearchRequest.filters`, or apply
 it locally with `configuration.apply(state, to: items)`.
 
+## Right-to-left
+
+- Layout mirrors automatically in Arabic/Hebrew: the field, chips, rows and the range slider's track and thumbs.
+- `KitoRangeSlider` maps the finger to a value from the leading edge, so dragging works the same way in RTL.
+- The result-row chevron and the "fill search field" arrow use `chevron.forward` / `arrow.up.backward` and flip with the layout.
+
 ## Installation
 
 ```swift

@@ -370,6 +370,7 @@ public struct KitoRangeSlider: View {
     @State private var dragging: Thumb?
     @Environment(\.kitoTheme) private var theme
     @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.layoutDirection) private var layoutDirection
 
     private enum Thumb { case lower, upper }
 
@@ -441,7 +442,10 @@ public struct KitoRangeSlider: View {
         DragGesture(minimumDistance: 0, coordinateSpace: .named("KitoRangeSlider"))
             .onChanged { gesture in
                 dragging = which
-                let fraction = Double((gesture.location.x - Self.thumbSize / 2) / track)
+                // The location is physical; the thumbs are laid out from the leading edge.
+                let width = track + Self.thumbSize
+                let x = layoutDirection == .rightToLeft ? width - gesture.location.x : gesture.location.x
+                let fraction = Double((x - Self.thumbSize / 2) / track)
                 move(which, to: KitoRangeSliderMath.value(at: fraction, bounds: bounds, step: step))
             }
             .onEnded { _ in dragging = nil }

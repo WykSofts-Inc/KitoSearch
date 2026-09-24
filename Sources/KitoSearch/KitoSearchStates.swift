@@ -308,7 +308,7 @@ struct KitoSearchIdleSections: View {
             }
             .buttonStyle(.plain)
             Button { onFill(recent) } label: {
-                Image(systemName: "arrow.up.left")
+                Image(systemName: "arrow.up.backward")
                     .font(.caption.weight(.bold))
                     .foregroundStyle(theme.colors.onSurface.opacity(0.35))
                     .frame(width: 30, height: 30)
@@ -398,7 +398,7 @@ struct KitoSearchSuggestionRows: View {
                 }
                 .buttonStyle(.plain)
                 Button { onFill(suggestion.text) } label: {
-                    Image(systemName: "arrow.up.left")
+                    Image(systemName: "arrow.up.backward")
                         .font(.caption.weight(.bold))
                         .foregroundStyle(theme.colors.onSurface.opacity(0.35))
                         .frame(width: 30, height: 30)
