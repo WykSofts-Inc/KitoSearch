@@ -58,12 +58,12 @@ search.correction             // "Did you mean …?"
 
 Inject a `KitoSearchClock` to control the debounce in tests.
 
-## The field
+## The search bar
 
 ```swift
-KitoSearchField(text: $query, prompt: "Search", style: .prominent,   // .capsule, .glass, .underlined
-                tokens: $tokens, scopes: [KitoSearchScope("all"), KitoSearchScope("people")],
-                scope: $scope, onSubmit: { run($0) }) {
+KitoSearchBar(text: $query, prompt: "Search", style: .prominent,   // .capsule, .glass, .underlined
+              tokens: $tokens, scopes: [KitoSearchScope("all"), KitoSearchScope("people")],
+              scope: $scope, onSubmit: { run($0) }) {
     KitoVoiceSearchButton(isListening: listening) { toggleDictation() }
 }
 ```
@@ -93,10 +93,16 @@ KitoAppliedFilterPills(filters.appliedFilters(for: state),
 `KitoFilterState` is a plain value: send it to your backend in `KitoSearchRequest.filters`, or apply
 it locally with `configuration.apply(state, to: items)`.
 
+## Migrating from 0.1
+
+0.2.0 renames `KitoSearchField` to `KitoSearchBar`, so KitoSearch can be imported in the same file
+as KitoFields (which has its own `KitoSearchField`) without "ambiguous" errors. Its initialiser is
+unchanged, and `KitoSearchFieldStyle` keeps its name.
+
 ## Installation
 
 ```swift
-.package(url: "https://github.com/WykSofts-Inc/KitoSearch.git", from: "0.1.0")
+.package(url: "https://github.com/WykSofts-Inc/KitoSearch.git", from: "0.2.0")
 ```
 
 ## License

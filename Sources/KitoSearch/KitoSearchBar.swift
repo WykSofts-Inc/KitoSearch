@@ -1,5 +1,5 @@
 //
-//  KitoSearchField.swift
+//  KitoSearchBar.swift
 //  KitoSearch
 //
 //  Created by Wycliff on 9/24/26.
@@ -9,7 +9,7 @@
 import SwiftUI
 import KitoCore
 
-/// How a `KitoSearchField` is drawn.
+/// How a `KitoSearchBar` is drawn.
 public enum KitoSearchFieldStyle: Sendable, CaseIterable {
     /// A filled capsule, like the system search bar.
     case capsule
@@ -32,15 +32,15 @@ public enum KitoSearchFieldStyle: Sendable, CaseIterable {
 /// an optional scope row and a trailing slot for a voice button or anything else.
 ///
 /// ```swift
-/// KitoSearchField(text: $query, prompt: "Restaurants, dishes, areas", style: .prominent,
-///                 tokens: $tokens, onSubmit: { search($0) }) {
+/// KitoSearchBar(text: $query, prompt: "Restaurants, dishes, areas", style: .prominent,
+///               tokens: $tokens, onSubmit: { search($0) }) {
 ///     KitoVoiceSearchButton(isListening: listening) { toggleDictation() }
 /// }
 /// ```
 ///
 /// On focus the field lifts and a focus ring grows around it, and Cancel slides in from the edge.
 /// Return submits. With a hardware keyboard, Delete in an empty field removes the last token.
-public struct KitoSearchField<Accessory: View>: View {
+public struct KitoSearchBar<Accessory: View>: View {
     @Binding private var text: String
     @Binding private var tokens: [KitoSearchToken]
     @Binding private var scope: String?
@@ -295,7 +295,7 @@ public struct KitoSearchField<Accessory: View>: View {
     }
 }
 
-public extension KitoSearchField where Accessory == EmptyView {
+public extension KitoSearchBar where Accessory == EmptyView {
     /// A search field without a trailing accessory.
     init(
         text: Binding<String>,
