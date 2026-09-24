@@ -122,7 +122,7 @@ public struct KitoSearchResultRow: View {
                 }
                 if let rating { KitoResultRating(rating: rating) }
             }
-            Image(systemName: "chevron.right")
+            Image(systemName: "chevron.forward")
                 .font(.caption.weight(.bold))
                 .foregroundStyle(theme.colors.onSurface.opacity(0.25))
                 .accessibilityHidden(true)
