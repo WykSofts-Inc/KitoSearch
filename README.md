@@ -1,5 +1,7 @@
 # KitoSearch
 
+**[Documentation](https://wyksofts-inc.github.io/KitoSearch/documentation/kitosearch/)**
+
 Search for SwiftUI: a search field in four styles, a model that debounces, cancels stale requests and
 pages results, typo-tolerant local matching, and a ready-made search screen with recents, trending,
 categories, suggestions, skeletons, empty and error states. Filter chips with counts and a filter
