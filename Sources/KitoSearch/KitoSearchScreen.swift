@@ -97,7 +97,7 @@ public struct KitoSearchScreen<Item: Identifiable, Row: View, Header: View>: Vie
     private var accent: Color { tint ?? theme.colors.primary }
 
     private var searchBar: some View {
-        KitoSearchField(
+        KitoSearchBar(
             text: $model.query,
             prompt: prompt,
             style: fieldStyle,
