@@ -28,7 +28,7 @@ var body: some View {
 }
 ```
 
-The building blocks are available on their own: ``KitoSearchField`` in four
+The building blocks are available on their own: ``KitoSearchBar`` in four
 styles with tokens and scopes, ``KitoHighlightedText`` for marking matched
 text, and a filtering layer — ``KitoFilterConfiguration``, ``KitoFilterChips``
 and ``KitoFilterSheet`` — whose ``KitoFilterState`` is a plain value you can
@@ -58,7 +58,7 @@ send to a backend or apply locally.
 
 ### Search Field
 
-- ``KitoSearchField``
+- ``KitoSearchBar``
 - ``KitoSearchFieldStyle``
 - ``KitoSearchToken``
 - ``KitoSearchScope``
